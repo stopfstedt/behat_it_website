@@ -1,0 +1,22 @@
+# default profile
+# this runs the tests against the test server
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: http://stage.it.ucsf.edu
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: "firefox"
+      goutte:
+        guzzle_parameters:
+          curl.options: { "CURLOPT_SSLVERSION": "3" }
+          ssl.certificate_authority: false
+      selenium2:
+        capabilities: { "browser": "firefox", "version": "14" }
+
+# use this profile to run against production
+production:
+  extensions:
+    Behat\MinkExtension\Extension:
+      selenium2:
+        base_url: https://it.ucsf.edu
