@@ -13,6 +13,20 @@ default:
           ssl.certificate_authority: false
       selenium2:
         capabilities: { "browser": "firefox", "version": "14" }
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      region_map:
+        UCSF Nav: '#ucsf-nav'
+        UCSF Mobile Nav: '#ucsf-nav-mobile'
+        Main Nav: '#header .primary-links'
+        Main Top Home Page: '#ucsf-nav'
+        Main Left Home Page: '#main-left'
+        Main Middle Home Page: '#main-mid'
+        Main Right Home Page: '#main-right'
+        Secondary Page Left Sidebar: '#sidebar-left'
+        Secondary Page Left Sidebar Bottom: '#sidebar-left .block-side-bar_left_bottom'
+        Secondary Page Middle Column: '#content-middle'
+        Footer: '#footer'
 
 # use this profile to run against production
 production:
