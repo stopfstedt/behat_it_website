@@ -7,12 +7,12 @@ use Behat\Behat\Context\ClosuredContextInterface,
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
-use Behat\MinkExtension\Context\MinkContext;
+use Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
  * Features context.
  */
-class FeatureContext extends MinkContext
+class FeatureContext extends DrupalContext
 {
     /**
      * @Given /^I am on the home page$/
