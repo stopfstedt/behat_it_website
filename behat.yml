@@ -3,7 +3,7 @@
 default:
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: http://stage.it.ucsf.edu
+      base_url: https://stage.it.ucsf.edu
       default_session: selenium2
       javascript_session: selenium2
       browser_name: "firefox"
