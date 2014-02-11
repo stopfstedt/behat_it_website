@@ -45,9 +45,20 @@ Feature: Homepage
 
   Scenario: Follow "Site Index" link in page footer to Service Now
     And I follow "Site Index" in the "Footer" region
-    Then I should be on "a-z_list"
+    Then I should be on "/a-z_list"
 
   Scenario: Follow "Suggest an IT Improvement" link in page footer to Qualtrics
     And I follow "Suggest an IT Improvement" in the "Footer" region
     Then I should be on "https://ucsf.us.qualtrics.com/SE/?SID=SV_6Ex9JgzTTzufnSY"
 
+  Scenario: Directory Search Form
+    And I fill in "last_name" with "Kilmister"
+    And I press the "Enter" key in the "last_name" field
+    Then I should be on "https://directory.ucsf.edu/?last_name=Kilmister&op.x=0&op.y=0"
+
+
+  #Scenario: Site Search Form
+  #  And I fill in "search_theme_form" with "Drupal"
+  #  And I submit the Site Search Form
+  #  Then I should see "Search"
+  #  And I should see "Drupal"
