@@ -52,13 +52,11 @@ Feature: Homepage
     Then I should be on "https://ucsf.us.qualtrics.com/SE/?SID=SV_6Ex9JgzTTzufnSY"
 
   Scenario: Directory Search Form
-    And I fill in "last_name" with "Kilmister"
-    And I press the "Enter" key in the "last_name" field
+    And I search the campus directory for "Kilmister"
     Then I should be on "https://directory.ucsf.edu/?last_name=Kilmister&op.x=0&op.y=0"
 
-
-  #Scenario: Site Search Form
-  #  And I fill in "search_theme_form" with "Drupal"
-  #  And I submit the Site Search Form
-  #  Then I should see "Search"
-  #  And I should see "Drupal"
+  Scenario: Site Search Form
+    And I search the site for "Drupal"
+    Then I should be on "/search/apachesolr_search/drupal"
+    And should see "Search"
+    And I should see "Drupal"
