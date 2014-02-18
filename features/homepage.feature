@@ -57,6 +57,6 @@ Feature: Homepage
 
   Scenario: Site Search Form
     And I search the site for "Drupal"
-    Then I should be on "/search/apachesolr_search/drupal"
+    Then I should be on "/search/apachesolr_search/Drupal"
     And should see "Search"
     And I should see "Drupal"
