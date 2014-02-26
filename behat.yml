@@ -3,8 +3,8 @@
 default:
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: http://stage.it.ucsf.edu
-      default_session: selenium2
+      base_url: http://it.ucsf.edu
+      default_session: goutte
       javascript_session: selenium2
       browser_name: "firefox"
       goutte:
@@ -28,9 +28,8 @@ default:
         Secondary Page Middle Column: '#content-middle'
         Footer: '#footer'
 
-# use this profile to run against production
-production:
+# "run everything in the browser" profile
+browser:
   extensions:
     Behat\MinkExtension\Extension:
-      selenium2:
-        base_url: http://it.ucsf.edu
+      default_session: selenium2
