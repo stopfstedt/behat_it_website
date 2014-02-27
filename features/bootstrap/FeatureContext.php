@@ -23,6 +23,10 @@ class FeatureContext extends DrupalContext
         $field = $this->getSession()->getPage()->find('css', '#search-theme-form .site-search');
         $field->focus();
         $field->setValue($searchTerm);
+        // this is currently the only way to properly submit the form.
+        // losing focus on the input field will reset it's entered value.
+        // see INC1309585 for details on this problem.
+        // @todo revisit this after INC1309585 has been fixed [ST 2014/02/27]
         $field->keyPress(13);
     }
 
@@ -34,7 +38,12 @@ class FeatureContext extends DrupalContext
         $field = $this->getSession()->getPage()->find('css', '#tools-directory-search .dir-search');
         $field->focus();
         $field->setValue($searchTerm);
+        // this is currently the only way to properly submit the form.
+        // losing focus on the input field will reset it's entered value.
+        // see INC1309596 for details on this problem.
+        // @todo revisit this after INC1309596 has been fixed [ST 2014/02/27]
         $field->keyPress(13);
+
     }
 
     /**
