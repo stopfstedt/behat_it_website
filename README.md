@@ -14,60 +14,60 @@ At the very least, you must have PHP 5.3.1+ and the Firefox browser installed in
 
 4. Install Behat and co. via Composer.
 
-```
-cd <project>
-composer install
-```
+   ```
+   cd <project>
+   composer install
+   ```
 
-If you don't want to run these tests in a headless browser (PhantomJS), then you're done here. Otherwise, continue
+   If you don't want to run these tests in a headless browser (PhantomJS), then you're done here. Otherwise, continue
 
 5. Install Node.js and NPM
 
-```
-sudo yum install nodejs npm
-```
+   ```
+   sudo yum install nodejs npm
+   ```
 
 6.  Install PhantomJS as NPM module globally
 
-```
-sudo npm install -g phantomjs
-```
+   ```
+   sudo npm install -g phantomjs
+   ```
 
 ## Run Test in a web-browser
 
 1. Run Selenium as standalone
 
-```
-java -jar /path/to/your/selenium-server-standalone.jar
-```
+   ```
+   java -jar /path/to/your/selenium-server-standalone.jar
+   ```
 
 2. Run Behat tests with the "browser" profile
 
-```
-cd <project>
-bin/behat -p browser
-```
+   ```
+   cd <project>
+   bin/behat -p browser
+   ```
 
 ## Run Tests in a headless web-browser
 
 1. Run Selenium as hub
 
-```
-java -jar /path/to/your/selenium-server-standalone.jar -role hub
-```
+   ```
+   java -jar /path/to/your/selenium-server-standalone.jar -role hub
+   ```
 
 2. Run PhantomJS and register it with Selenium
 
-```
-phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
-```
+   ```
+   phantomjs --webdriver=8080 --webdriver-selenium-grid-hub=http://127.0.0.1:4444
+   ```
 
 3. Run Behat tests with the "headless" profile
 
-```
-cd <project>
-bin/behat -p headless
-```
+   ```
+   cd <project>
+   bin/behat -p headless
+   ```
 
 ## Troubleshooting
 
@@ -75,22 +75,22 @@ bin/behat -p headless
 
    Make sure your `php-xml` PHP extension is installed or up-to-date.
 
-```
-sudo yum install php-xml
-```
+   ```
+   sudo yum install php-xml
+   ```
 
 2. Why am I getting "PHP Fatal error:  Call to undefined function Behat\Behat\DependencyInjection\mb_internal_encoding()..."?
 
    Make sure you have installed the `php-mbstring` PHP extension.
 
-```
-sudo yum install php-mbstring
-```
+   ```
+   sudo yum install php-mbstring
+   ```
 
 3. Why I am not getting colored output from behat tests?
 
    Behat is probably not picking up the type of terminal you're using.  Forcing it to run in ANSI mode will probably fix it.
 
-```
-bin/behat --ansi
-```
+   ```
+   bin/behat --ansi
+   ```
