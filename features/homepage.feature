@@ -6,3 +6,19 @@ Feature: Homepage
   Background:
     Given I am on the homepage
 
+  Scenario: Main Top
+    Then I should see 3 image links in the "Main Top Home Page" region
+
+  Scenario: Our Services
+    Then I should see the heading "Our Services" in the "Main Left Home Page" region
+
+  Scenario: News
+    Then I should see the heading "News" in the "Main Middle Home Page" region
+
+  Scenario: Tools
+    Then I should see the heading "Tools" in the "Main Right Home Page" region
+
+  Scenario: Status
+    Then I should see the heading "Status" in the "Main Right Home Page" region
+
+
