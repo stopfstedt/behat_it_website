@@ -19,7 +19,7 @@ default:
         UCSF Nav: '#ucsf-nav'
         UCSF Mobile Nav: '#ucsf-nav-mobile'
         Main Nav: '#header .primary-links'
-        Main Top Home Page: '#ucsf-nav'
+        Main Top Home Page: '#maintop'
         Main Left Home Page: '#main-left'
         Main Middle Home Page: '#main-mid'
         Main Right Home Page: '#main-right'
