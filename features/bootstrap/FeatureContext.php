@@ -36,4 +36,32 @@ class FeatureContext extends DrupalContext
         $field->setValue($searchTerm);
         $field->keyPress(13);
     }
+
+    /**
+     * @Given /^I resize the window to "(\d+)" by "(\d+)"$/
+     */
+    public function iResizeWindow($width, $height)
+    {
+        $this->getSession()->resizeWindow((int) $width, (int) $height);
+    }
+
+    /**
+     * @Then /^I should see the "([^"]*)" region$/
+     */
+    public function iShouldSeeTheRegion($region) {
+        $regionObj = $this->getRegion($region);
+        if (! $regionObj->isVisible()) {
+            throw new \Exception(sprintf('Region "%s" on the page %s is not visible.', $region, $this->getSession()->getCurrentUrl()));
+        }
+    }
+
+    /**
+     * @Given /^I should not see the "([^"]*)" region$/
+     */
+    public function iShouldNotSeeTheRegion($region) {
+        $regionObj = $this->getRegion($region);
+        if ($regionObj->isVisible()) {
+            throw new \Exception(sprintf('Region "%s" on the page %s is visible.', $region, $this->getSession()->getCurrentUrl()));
+        }
+    }
 }
