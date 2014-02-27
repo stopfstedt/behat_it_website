@@ -1,5 +1,5 @@
 <?php
-
+use Behat\Behat\Exception\PendingException;
 use Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
@@ -84,5 +84,36 @@ class FeatureContext extends DrupalContext
         }
         $regionId = $regionObj->getAttribute('id');
         $this->assertNumElements((int) $num, "#{$regionId} a > img");
+    }
+
+    /**
+     * @Given /^I should see a list with (\d+) items in the "([^"]*)" region$/
+     */
+    public function iShouldSeeAListWithItemsInTheRegion($num, $region) {
+        $regionObj = $this->getRegion($region);
+        if (! $regionObj) {
+            throw new \Exception(sprintf('Region "%s" on the page %s does not exist.', $region, $this->getSession()->getCurrentUrl()));
+        }
+        $regionId = $regionObj->getAttribute('id');
+        $this->assertNumElements((int) $num, "#{$regionId} li");
+    }
+
+    /**
+     * @Given /^I should see a View with (\d+) rows in the "([^"]*)" region$/
+     */
+    public function iShouldSeeAViewWithRowsInTheRegion($num, $region) {
+        $regionObj = $this->getRegion($region);
+        if (! $regionObj) {
+            throw new \Exception(sprintf('Region "%s" on the page %s does not exist.', $region, $this->getSession()->getCurrentUrl()));
+        }
+        $regionId = $regionObj->getAttribute('id');
+        $this->assertNumElements((int) $num, "#{$regionId} .view-content .views-row");
+    }
+
+    /**
+     * @Given /^I should see the IT Help block in the "([^"]*)" region$/
+     */
+    public function iShouldSeeTheItHelpBlockInTheRegion($region) {
+        throw new PendingException();
     }
 }
