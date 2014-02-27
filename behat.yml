@@ -27,22 +27,17 @@ default:
         Secondary Page Left Sidebar Bottom: '#sidebar-left .block-side-bar_left_bottom'
         Secondary Page Middle Column: '#content-middle'
         Footer: '#footer'
-  filters:
-    tags: "~@javascript"
 
-# "run everything in the browser" profile
+# Use this profile to run all tests in Firefox
 browser:
   extensions:
     Behat\MinkExtension\Extension:
       default_session: selenium2
-  filters:
-    tags: ~
 
 # Use this profile for running tests with JS-dependencies in a headless browser.
-phantomjs:
+headless:
   extensions:
     Behat\MinkExtension\Extension:
+      default_session: selenium2
       selenium2:
         wd_host: "http://localhost:8080/wd/hub"
-  filters:
-     tags: ~
