@@ -6,7 +6,6 @@ Feature: Homepage
   Background:
     Given I am on the homepage
 
-  @javascript
   Scenario: See the UCSF banner navigation
     Then I should see "UCSF" in the "UCSF Nav" region
     And I should see the link "University of California, San Francisco" in the "UCSF Nav" region
@@ -40,31 +39,26 @@ Feature: Homepage
     And I follow "UCSF Directory" in the "UCSF Nav" region
     Then I should be on "http://directory.ucsf.edu/"
 
-  @javascript
   Scenario: See the UCSF mobile banner navigation
     And I resize the window to "200" by "600"
     Then I should see the link "UCSF" in the "UCSF Mobile Nav" region
     And I should see the link "University of California, San Francisco" in the "UCSF Mobile Nav" region
     But I should not see the "UCSF Nav" region
 
-  @javascript
   Scenario: Follow "UCSF" link in the UCSF banner navigation
     And I resize the window to "200" by "600"
     And I follow "UCSF" in the "UCSF Mobile Nav" region
     Then I should be on "http://www.ucsf.edu/"
 
-  @javascript
   Scenario: Follow "University of California, San Francisco" link in the UCSF banner navigation
     And I follow "University of California, San Francisco" in the "UCSF Mobile Nav" region
     Then I should be on "http://www.ucsf.edu/"
 
-  @javascript
   Scenario: Banner navigation switcheroo on smaller viewports
     And I resize the window to "200" by "600"
     Then I should see the "UCSF Mobile Nav" region
     But I should not see the "UCSF Nav" region
 
-  @javascript
   Scenario: Banner navigation switcheroo on larger viewports
     And I resize the window to "1000" by "600"
     Then I should see the "UCSF Nav" region
@@ -115,12 +109,10 @@ Feature: Homepage
     And I follow "Suggest an IT Improvement" in the "Footer" region
     Then I should be on "https://ucsf.us.qualtrics.com/SE/?SID=SV_6Ex9JgzTTzufnSY"
 
-  @javascript
   Scenario: Directory Search Form
     And I search the campus directory for "Kilmister"
     Then I should be on "https://directory.ucsf.edu/?last_name=Kilmister&op.x=0&op.y=0"
 
-  @javascript
   Scenario: Site Search Form
     And I search the site for "Drupal"
     Then I should be on "/search/apachesolr_search/Drupal"
