@@ -12,7 +12,7 @@ class FeatureContext extends DrupalContext
      */
     public function iAmOnTheHomePage()
     {
-        $this->visit("/");
+        $this->assertHomepage();
     }
 
     /**
