@@ -73,4 +73,16 @@ class FeatureContext extends DrupalContext
             throw new \Exception(sprintf('Region "%s" on the page %s is visible.', $region, $this->getSession()->getCurrentUrl()));
         }
     }
+
+    /**
+     * @Then /^I should see (\d+) image-links in the "([^"]*)" region$/
+     */
+    public function iShouldSeeImageLinksInTheRegion($num, $region) {
+        $regionObj = $this->getRegion($region);
+        if (! $regionObj) {
+            throw new \Exception(sprintf('Region "%s" on the page %s does not exist.', $region, $this->getSession()->getCurrentUrl()));
+        }
+        $regionId = $regionObj->getAttribute('id');
+        $this->assertNumElements((int) $num, "#{$regionId} a > img");
+    }
 }
