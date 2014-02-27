@@ -46,6 +46,7 @@ At the very least, you must have PHP 5.3.1+ and the Firefox browser installed in
     cd <project>
     bin/behat -p browser
     ```
+
 ## Run Tests in a headless web-browser
 
 1. Run Selenium as hub
