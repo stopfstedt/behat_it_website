@@ -4,7 +4,7 @@ The assumption is that you are doing this on a recent Fedora/RHEL (or derivative
 
 ## Prerequisites
 
-At the very least, you must have PHP 5.3.1+ and the Firefox browser installed in order to run these tests.
+At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in order to run these tests.
 
 1. Install the Oracle JDK, see: http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-7-on-fedora-centos-red-hat-rhel/
 
