@@ -27,10 +27,9 @@ Feature: Banner Navigation
     And I follow "About UCSF" in the "UCSF Nav" region
     Then I should be on "http://www.ucsf.edu/about"
 
-  # this link is broken, see INC1309577
   Scenario: Follow "Search UCSF" link in the UCSF banner navigation
     And I follow "Search UCSF" in the "UCSF Nav" region
-    Then I should be on "http://www.googlesyndicatedsearch.com/"
+    Then I should be on "http://www.ucsf.edu/search"
 
   Scenario: Follow "UCSF Medical Center" link in the UCSF banner navigation
     And I follow "UCSF Medical Center" in the "UCSF Nav" region
