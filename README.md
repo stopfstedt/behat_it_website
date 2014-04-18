@@ -8,11 +8,9 @@ At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in
 
 1. Install the Oracle JDK, see: http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-7-on-fedora-centos-red-hat-rhel/
 
-2. Download the latest Selenium Server JAR file from http://docs.seleniumhq.org/download/
+2. Install Composer. See http://getcomposer.org/doc/00-intro.md for instructions.
 
-3. Install Composer. See http://getcomposer.org/doc/00-intro.md for instructions.
-
-4. Install Behat and co. via Composer.
+3. Install Behat and co. via Composer.
 
     ```
     cd <project>
@@ -20,13 +18,13 @@ At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in
     ```
    If you don't want to run these tests in a headless browser (PhantomJS), then you're done here. Otherwise, continue
 
-5. Install Node.js and NPM
+4. Install Node.js and NPM
 
     ```
     sudo yum install nodejs npm
     ```
 
-6.  Install PhantomJS as NPM module globally
+5.  Install PhantomJS as NPM module globally
 
     ```
     sudo npm install -g phantomjs
@@ -37,7 +35,8 @@ At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in
 1. Run Selenium as standalone
 
     ```
-    java -jar /path/to/your/selenium-server-standalone.jar
+    cd <project>
+    java -jar bin/selenium-server.jar
     ```
 
 2. Run Behat tests with the "browser" profile
@@ -52,7 +51,8 @@ At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in
 1. Run Selenium as hub
 
     ```
-    java -jar /path/to/your/selenium-server-standalone.jar -role hub
+    cd <project>
+    java -jar bin/selenium-server.jar -role hub
     ```
 
 2. Run PhantomJS and register it with Selenium
@@ -77,7 +77,6 @@ At the very least, you must have PHP 5.3.5+ and the Firefox browser installed in
     ```
     sudo yum install php-xml
     ```
-
 
 - Why am I getting "PHP Fatal error:  Call to undefined function Behat\Behat\DependencyInjection\mb_internal_encoding()..."?
 
